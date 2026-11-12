@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UTY Easy Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="shader-bg"></canvas>
+
+    <div id="win-screen" style="display: none;">
+        <h1>СПАСИБО ЗА ИГРУ!</h1>
+        <p>Вы победили кошмарного цветка.</p>
+        <button onclick="location.reload()">Сыграть ещё раз</button>
+    </div>
+
+    <div id="game-ui">
+        <div id="dialogue-box">* Странный цветок преграждает путь!</div>
+        <div id="boss-area">
+            <img id="boss-img" alt="Boss">
+            <div id="boss-hp-wrap"><div id="boss-hp-fill"></div></div>
+        </div>
+        <div id="battle-box">
+            <img id="soul" alt="Soul">
+            <div id="submenu" style="display: none;"></div>
+            <div id="fight-minigame" style="display: none;">
+                <div id="target-zone"></div>
+                <div id="cursor-bar"></div>
+            </div>
+        </div>
+        <div id="hud">
+            <span>CLOVER &nbsp; LV 1</span>
+            <span>HP <span id="hp-bar"><span id="hp-fill"></span></span> <span id="hp-text">20/20</span></span>
+        </div>
+        <div id="actions">
+            <button onclick="openMenu('fight')">[ FIGHT ]</button>
+            <button onclick="openMenu('act')">[ ACT ]</button>
+            <button onclick="openMenu('item')">[ ITEM ]</button>
+            <button onclick="openMenu('mercy')">[ MERCY ]</button>
+        </div>
+        <div id="mobile-controls">
+            <div class="dpad">
+                <button id="btn-up">▲</button>
+                <div class="dpad-mid">
+                    <button id="btn-left">◄</button>
+                    <button id="btn-down">▼</button>
+                    <button id="btn-right">►</button>
+                </div>
+            </div>
+            <button id="btn-shoot" onpointerdown="handleActionPress()">ОГОНЬ<br>(Z)</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
